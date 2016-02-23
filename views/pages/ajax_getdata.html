@@ -1,0 +1,49 @@
+<?php switch($_GET['type']){
+    case "plain":
+
+        break;
+    case "table": ?>
+        <table class="table table-hover">
+            <thead align="center">
+                <tr>
+                    <td colspan="5">
+                        <h4>
+                        <?php echo $data['content'][0];
+                        array_shift($data['content']);?>
+                        </h4>
+                    </td>
+                </tr>
+                <?php if( App::getUser()->getUserData()['group'] == 'law_dept' ){?>
+                <tr>
+                    <td colspan="6">
+                        <button class="btn btn-sm btn-primary" onclick="alert('Add agreement button pressed!!');">Додати новий договір</button>
+                    </td>
+                </tr>
+                <?php } ?>
+                <tr>
+                    <td><b>Контрагент</b></td>
+                    <td><b>Реєстраційний номер</b></td>
+                    <td><b>Предмет угоди</b></td>
+                    <td><b>Примітки</b></td>
+                    <td><b>Можливі дії</b></td>
+                </tr>
+            </thead>
+            <tbody align="center" style="cursor:pointer;">
+            <?php foreach($data['content'] as $value){ ?>
+                <tr onclick="getAgrData(this.id);" id="<?=implode(App::getRouter()->getParams()).'-'.$value['id'];?>">
+                    <td><?=$value['contractor_title'];?></td>
+                    <td><?=$value['agr_regnum'];?></td>
+                    <td><?=$value['agr_subj'];?></td>
+                    <td><?=$value['notes'];?></td>
+                    <?php if( App::getUser()->getUserData()['group'] == 'law_dept' ){?>
+                        <td>
+                            <button class="btn btn-sm btn-primary" onclick="editAgrData(this.parentNode.parentNode.id); event.stopPropagation();">Редагувати</button>
+                            <button class="btn btn-sm btn-warning" onclick="deleteAgrData(this.parentNode.parentNode.id); event.stopPropagation();">Видалити</button>
+                        </td>
+                    <?php } ?>
+                </tr>
+            <?php }?>
+            </tbody>
+        </table>
+        <?php break;
+}?>

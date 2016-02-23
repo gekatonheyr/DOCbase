@@ -1,0 +1,30 @@
+<h3>Users list</h3><br/>
+<table class="table table-striped" style="width: 400px;">
+    <tr>
+        <?php foreach( array_keys($data['users'][0]) as $data_header ) {?>
+        <td>
+            <?=ucfirst($data_header)?>
+        </td>
+        <?php } ?>
+        <td>Actions</td>
+    </tr>
+<?php foreach($data['users'] as $page_data) { ?>
+    <tr>
+        <td><b><?=$page_data['id']?></b></td>
+        <td><b><?=$page_data['login']?></b></td>
+        <td><b><?=$page_data['name']?></b></td>
+        <td><b><?=$page_data['soname']?></b></td>
+        <td><b><?=$page_data['surname']?></b></td>
+        <td align="right">
+            <a href="/admin/pages/edit/<?=$page_data['id']?>"><button class="btn btn-sm btn-primary">edit</button></a>
+            <a href="/admin/pages/delete/<?=$page_data['id']?>" onclick="return confirmDelete();"><button class="btn btn-sm btn-warning">delete</button></a>
+        </td>
+    </tr>
+<?php } ?>
+</table>
+
+<br/>
+
+<div>
+    <a href="/admin/users/add/"><button class="btn btn-sm btn-success">New User</button></a>
+</div>

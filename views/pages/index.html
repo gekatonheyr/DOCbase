@@ -1,0 +1,25 @@
+<div class="row" style="margin-top: 50px;">
+    <aside class="col-md-3">
+        <div class="easy-tree">
+            <ul>
+                <?php foreach($data['department_struct'] as $page_data) { ?>
+                    <li id="<?=$page_data['alias']?>"><?=$page_data['dept_title']?></li>
+                <?php } ?>
+            </ul>
+        </div>
+        <script>
+            (function ($) {
+                function init() {
+                    $('.easy-tree').EasyTree();
+                }
+                window.onload = init();
+            })(jQuery)
+        </script>
+    </aside>
+
+    <content class="col-md-9">
+        <div id="main_content">
+
+        </div>
+    </content>
+</div>

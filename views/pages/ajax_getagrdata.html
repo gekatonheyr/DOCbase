@@ -1,0 +1,116 @@
+<table>
+    <thead>
+        <tr align="center">
+            <td colspan="3">
+                <h4>
+                Договір №<?=$data['content']['agr_data']['agr_regnum'];?> укладений між <br>
+                <?=$data['content']['enterprise_data']['organization_form'].' '.$data['content']['enterprise_data']['title'];?>
+                та <?=$data['content']['contractor_data']['organization_form'].' '.$data['content']['contractor_data']['title'];?>
+                    <br><?=$data['content']['agr_data']['staple_date'];?>
+                </h4>
+            </td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td rowspan="12"  style="border: 1px solid black;"><object data="<?=$data['content']['agr_data']['scan_path']?>" type="application/pdf" width="250px" height="350px"></object></td>
+            <td><b>Замовник: </b></td>
+            <td><?=$data['content']['enterprise_data']['organization_form'].' '.$data['content']['enterprise_data']['title'];?></td>
+        </tr>
+        <tr>
+            <td>Код ЄДРПОУ:</td>
+            <td><?=$data['content']['enterprise_data']['EDRPOU'];?></td>
+        </tr>
+        <tr>
+            <td>ІПН:</td>
+            <td><?=$data['content']['enterprise_data']['IPN'];?></td>
+        </tr>
+        <tr>
+            <td>Адреса реєстрації:</td>
+            <td><?=$data['content']['enterprise_data']['reg_address'];?></td>
+        </tr>
+        <tr>
+            <td>Адреса фактична (поштова):</td>
+            <td><?=$data['content']['enterprise_data']['real_address'];?></td>
+        </tr>
+        <tr>
+            <td>Рахунок №:</td>
+            <td><?=$data['content']['enterprise_data']['bank_acc'];?></td>
+        </tr>
+        <tr>
+            <td>Банк:</td>
+            <td><?=$data['content']['enterprise_data']['bank_data'];?></td>
+        </tr>
+        <tr>
+            <td>Сайт:</td>
+            <td><?=$data['content']['enterprise_data']['site'];?></td>
+        </tr>
+        <tr>
+            <td>Електронна пошта:</td>
+            <td><?=$data['content']['enterprise_data']['email'];?></td>
+        </tr>
+        <tr>
+            <td>Телефон:</td>
+            <td><?=$data['content']['enterprise_data']['tel'];?></td>
+        </tr>
+        <tr>
+            <td>Факс:</td>
+            <td><?=$data['content']['enterprise_data']['fax'];?></td>
+        </tr>
+        <tr>
+            <td>Керівник:</td>
+            <td><?=$data['content']['enterprise_data']['ceo_id'];?></td>
+        </tr>
+
+        <tr>
+            <td><b>Виконавець: </b></td>
+            <td colspan="2"><?=$data['content']['contractor_data']['organization_form'].' '.$data['content']['contractor_data']['title'];?></td>
+        </tr>
+        <tr>
+            <td>Код ЄДРПОУ:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['id'];?></td>
+        </tr>
+        <tr>
+            <td>ІПН:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['IPN'];?></td>
+        </tr>
+        <tr>
+            <td>Адреса реєстрації:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['reg_address'];?></td>
+        </tr>
+        <tr>
+            <td>Адреса фактична (поштова):</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['real_address'];?></td>
+        </tr>
+        <tr>
+            <td>Рахунок №:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['bank_acc'];?></td>
+        </tr>
+        <tr>
+            <td>Банк:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['bank_data'];?></td>
+        </tr>
+        <tr>
+            <td>Сайт:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['site'];?></td>
+        </tr>
+        <tr>
+            <td>Електронна пошта:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['email'];?></td>
+        </tr>
+        <tr>
+            <td>Телефон:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['tel'];?></td>
+        </tr>
+        <tr>
+            <td>Факс:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['fax'];?></td>
+        </tr>
+        <tr>
+            <td>Керівник:</td>
+            <td colspan="2"><?=$data['content']['contractor_data']['ceo'];?></td>
+        </tr>
+
+    </tbody>
+</table>
